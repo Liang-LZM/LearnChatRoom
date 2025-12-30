@@ -1,12 +1,53 @@
-﻿using System;
+﻿using LearnChatRoom.MVVM.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LearnChatRoom.MVVM.ViewModel
 {
-    internal class MainViewModel
+    public class MainViewModel
     {
+        public ObservableCollection<MessageModel> Messages { get; set; }
+        public ObservableCollection<ContactModel> Contacts { get; set; }
+
+        public MainViewModel()
+        {
+            Messages = new ObservableCollection<MessageModel>();
+            Contacts = new ObservableCollection<ContactModel>();
+
+            Messages.Add(new MessageModel
+            {
+                Username = "Alex",
+                UsernameColor = "#409aff",
+                ImageSource = "https://tse1.explicit.bing.net/th/id/OIP.BzjY_OsxeGhvVgd-4uP1cAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+                Message = "first",
+                Time = DateTime.Now,
+                IsNativeOrigin = true,
+            });
+
+            Messages.Add(new MessageModel
+            {
+                Username = "Alex",
+                UsernameColor = "#409aff",
+                ImageSource = "https://tse1.explicit.bing.net/th/id/OIP.BzjY_OsxeGhvVgd-4uP1cAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+                Message = "last",
+                Time = DateTime.Now,
+                IsNativeOrigin = true,
+            });
+
+            for (int i = 0; i < 5; i++)
+            {
+                Contacts.Add(new ContactModel
+                {
+                    Username = $"Alex{i}",
+                    ImageSource = "https://tse1.explicit.bing.net/th/id/OIP.BzjY_OsxeGhvVgd-4uP1cAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+                    Messages = Messages
+                });
+            }
+        }
+
     }
 }
