@@ -12,7 +12,6 @@
     <Folder Include="Icons\" />
     <Folder Include="MVVM\View\" />
     <Folder Include="MVVM\Model\" />
-    <Folder Include="Thenes\" />
     <Folder Include="Core\" />
   </ItemGroup>
 
