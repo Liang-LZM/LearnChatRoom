@@ -20,5 +20,49 @@ namespace LearnChatRoom
         {
             InitializeComponent();
         }
+
+        #region 界面按钮事件
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.IsActive)
+                {
+                    window.WindowState = WindowState.Minimized;
+                }
+            }
+        }
+
+        private void WindowStateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.IsActive)
+                {
+                    if (window.WindowState != WindowState.Maximized)
+                    {
+                        window.WindowState = WindowState.Maximized;
+                    }
+                    else
+                    {
+                        window.WindowState = WindowState.Normal;
+                    }
+                }
+            }
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        #endregion
     }
 }
