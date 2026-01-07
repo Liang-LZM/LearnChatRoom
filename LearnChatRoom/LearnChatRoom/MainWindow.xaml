@@ -126,7 +126,8 @@
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
 
-            <Border>
+            <Border BorderBrush="#2F3136"
+                    BorderThickness="0,0,0,2">
                 <Grid HorizontalAlignment="Stretch"
                       Margin="8">
                     <Label Content="@Username"
@@ -146,19 +147,16 @@
                                RenderOptions.BitmapScalingMode="Fant"
                                Margin="5,0,5,0"
                                Source="./Icons/send.png"/>
-
-                        <Image Width="20" Height="20"
-                               RenderOptions.BitmapScalingMode="Fant"
-                               Margin="5,0,5,0"
-                               Source="./Icons/send.png"/>
-
-                        <Image Width="20" Height="20"
-                               RenderOptions.BitmapScalingMode="Fant"
-                               Margin="5,0,5,0"
-                               Source="./Icons/send.png"/>
                     </StackPanel>
                 </Grid>
             </Border>
+
+            <ListView ItemsSource="{Binding SelectedContact Messages}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      ItemContainerStyle="{StaticResource ChatItem}"
+                      Margin="8,0,0,0"
+                      Grid.Row="1"/>
 
 
         </Grid>
