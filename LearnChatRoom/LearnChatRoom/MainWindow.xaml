@@ -37,7 +37,7 @@
                    />
 
                 <StackPanel HorizontalAlignment="Right"
-                        Orientation="Horizontal" Height="25" Margin="1140,0,0,0" VerticalAlignment="Top">
+                        Orientation="Horizontal">
 
                     <Button Width="20" Height="20"
                         Content="_"
@@ -80,17 +80,18 @@
             </Grid.RowDefinitions>
 
             <Label Content="Contacts"
-               VerticalAlignment="Center"
-               FontWeight="Medium"
-               Foreground="Gray"
-               Margin="8, 0, 0, 0"/>
+                   VerticalAlignment="Center"
+                   FontWeight="Medium"
+                   Foreground="Gray"
+                   Margin="8, 0, 0, 0"/>
 
             <ListView ItemsSource="{Binding Contacts}"
-                  Background="Transparent"
-                  BorderThickness="0"
-                  Grid.Row="1" 
-                  ItemContainerStyle="{StaticResource ContactCard}" 
-                  />
+                      SelectedItem="{Binding SelectedContact}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      Grid.Row="1" 
+                      ItemContainerStyle="{StaticResource ContactCard}" 
+                      />
 
             <StackPanel Grid.Row="2"
                         Orientation="Horizontal"
@@ -151,7 +152,7 @@
                 </Grid>
             </Border>
 
-            <ListView ItemsSource="{Binding SelectedContact Messages}"
+            <ListView ItemsSource="{Binding SelectedContact.Messages}"
                       Background="Transparent"
                       BorderThickness="0"
                       ItemContainerStyle="{StaticResource ChatItem}"

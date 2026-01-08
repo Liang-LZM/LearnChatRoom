@@ -22,16 +22,18 @@
                                        VerticalAlignment="Center"
                                        Margin="0,0,-5,0"/>
 
-                                <Label Content="{Binding Time}"
-                                       Foreground="#44474D"
-                                       FontWeight="SemiBold"
-                                       FontSize="8"
-                                       VerticalAlignment="Center"/>
+                                <StackPanel Orientation="Vertical">
+                                    <Label Content="{Binding Time}"
+                                           Foreground="#44474D"
+                                           FontWeight="SemiBold"
+                                           FontSize="8"
+                                           VerticalAlignment="Center"/>
 
-                                <Label Content="{Binding Message}"
-                                       Foreground="White"
-                                       FontWeight="SemiBold"
-                                       VerticalAlignment="Center"/>
+                                    <Label Content="{Binding Message}"
+                                           Foreground="White"
+                                           FontWeight="SemiBold"
+                                           VerticalAlignment="Center"/>
+                                </StackPanel>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
